@@ -1,0 +1,20 @@
+{
+  "name": "educator_bot",
+  "version": "1.0.0",
+  "description": "educating people on use of some terminology",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "amaze"
+  ],
+  "author": "SKIDDOTRON",
+  "license": "ISC",
+  "dependencies": {
+    "base64image-to-file": "^1.2.0",
+    "giphy-api": "^1.2.7",
+    "twit": "^2.2.10"
+  }
+}
