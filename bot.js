@@ -35,7 +35,7 @@ setInterval(() => {
  let stream = T.stream('statuses/filter', { track: '#crypto' })
  stream.on('tweet', function (tweet) {
    // if the tweet author has a lot of followers, go educate
-   if(tweet.user.followers_count > 100000) {
+   if(tweet.user.followers_count > 200000) {
      console.log(chalk.red(`TIME TO EDUCATE @${tweet.user.screen_name}`))
      let part_text = pickTweetText();
      let full_text = `@${tweet.user.screen_name} ${part_text}`;
