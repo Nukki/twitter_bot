@@ -4,12 +4,20 @@ let fs = require('fs');         // for gif download
 
 // twitter setup
 let Twit = require('twit');
-let config = require('./config');
+// let config = require('./config');
+let config = {
+  consumer_key: process.env.twitter_consumer_key ,
+  consumer_secret: process.env.twitter_consumer_secret ,
+  access_token: process.env.twitter_access_token ,
+  access_token_secret: process.env.twitter_access_token_secret ,
+  timeout_ms: 70*1000,
+}
 let T = new Twit(config);
 
 // giphy setup
-let g_api_key = require('./giphy_key');
-let giphy = require('giphy-api')(g_api_key.key);
+// let giphy_key = require('./giphy_key');
+let giphy_key = process.env.giphy_api_key;
+let giphy = require('giphy-api')(giphy_key);
 
  // var stream = T.stream('user');
  // stream.on('follow', function(msg) {
