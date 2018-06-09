@@ -40,7 +40,9 @@ setInterval(() => {
      let part_text = pickTweetText();
      let full_text = `@${tweet.user.screen_name} ${part_text}`;
      let search = pickSearchTerm();
-     postWithGif(search, full_text, tweet.id_str);
+     setTimeout( () => {
+       postWithGif(search, full_text, tweet.id_str);
+     }, 1000*30);
    }
  })
 
