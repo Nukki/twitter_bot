@@ -13,7 +13,7 @@ $ npm install
 ```
 $ npm start
 ```
-In your browser got to `http://localhost:3000`
+In your browser go to `http://localhost:3000`
 ## Demo
 This bot in action: [`@iSkidYouNot`](https://twitter.com/iSkidYouNot)
 
