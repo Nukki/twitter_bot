@@ -3,3 +3,4 @@ config.js
 npm-debug.log
 giphy_key.js
 .DS_Store
+package-lock.json

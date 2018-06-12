@@ -3,33 +3,27 @@ let https = require('https');   // for gif download
 let fs = require('fs');         // for gif download
 
 // twitter setup
-let Twit = require('twit');
-// let config = require('./config');
 let config = {
-  consumer_key: process.env.twitter_consumer_key ,
-  consumer_secret: process.env.twitter_consumer_secret ,
-  access_token: process.env.twitter_access_token ,
-  access_token_secret: process.env.twitter_access_token_secret ,
+  consumer_key:        'YOUR KEY HERE',
+  consumer_secret:     'YOUR SECRET HERE',
+  access_token:        'YOUR TOKEN HERE',
+  access_token_secret: 'YOUR TOKEN SECRET HERE',
   timeout_ms: 70*1000,
 }
+
+let Twit = require('twit');
 let T = new Twit(config);
 
 // giphy setup
-// let giphy_key = require('./giphy_key');
-let giphy_key = process.env.giphy_api_key;
+let giphy_key = 'YOUR KEY HERE';
 let giphy = require('giphy-api')(giphy_key);
 
- // var stream = T.stream('user');
- // stream.on('follow', function(msg) {
- //   console.log("followed by ", msg.source.screen_name);
- // });
-
-// post updates about my day
+// post updates about my day every hour
 // 1 min = 1000*60
 setInterval(() => {
   let search = pickUpdateTerm();
   postWithGif(search, "", null);
-}, 1000*60*60);
+}, 1000*60*61);
 
 // educate people who use the term "crypto" incorrectly
  let stream = T.stream('statuses/filter', { track: '#crypto' })
@@ -40,6 +34,8 @@ setInterval(() => {
      let part_text = pickTweetText();
      let full_text = `@${tweet.user.screen_name} ${part_text}`;
      let search = pickSearchTerm();
+
+     // wait 30 seconds before posting a reply
      setTimeout( () => {
        postWithGif(search, full_text, tweet.id_str);
      }, 1000*30);
@@ -47,12 +43,10 @@ setInterval(() => {
  })
 
 
-
 // ************************* Posting Functionality *******************
 
-
 // gif_search_term is given to Giphy API
-// tweet_text is the content of posted
+// tweet_text is the content of future tweet
 // reply_id is the tweet id we're replying to, null if a tweet is not a reply
 function postWithGif(gif_search_term, tweet_text, reply_id) {
   console.log(chalk.magentaBright("CREATING A TWEET **************************"));
