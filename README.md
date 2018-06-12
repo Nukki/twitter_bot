@@ -1,5 +1,5 @@
 ![Alt Text](readme_images/twitter.png) 
-# twitter_bot
+# A Twitter Bot
 ### Node.js Twitter bot educating people how to use hashtag "crypto" correctly and posting GIFs
 
 ## Getting Started
@@ -15,7 +15,7 @@ $ npm start
 ```
 In your browser got to `http://localhost:3000`
 ## Demo
-Check you what my bot [`@iSkidYouNot`](https://twitter.com/iSkidYouNot)
+This bot in action: [`@iSkidYouNot`](https://twitter.com/iSkidYouNot)
 
 ![Alt Text](readme_images/giphy.gif)
 
